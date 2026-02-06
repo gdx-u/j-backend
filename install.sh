@@ -1,5 +1,10 @@
 #!/bin/bash
-# Download J (latest Linux 64-bit)
-wget -q https://www.jsoftware.com/download/j901linux.tar.gz -O j.tar.gz
+# Exit on any error
+set -e
+wget -O j.tar.gz https://www.jsoftware.com/download/j9.6/install/j9.6_linux64.tar.gz
+
+# Extract the archive
 tar -xzf j.tar.gz
-chmod +x j901/bin/jconsole
+
+# Make jconsole executable
+chmod +x j9.6/bin/jconsole
