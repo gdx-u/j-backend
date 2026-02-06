@@ -1,11 +1,10 @@
 const express = require("express");
 const { spawn } = require("child_process");
 const path = require("path");
+const jPath = path.join(__dirname, "j9.6/bin/jconsole");
 
 const app = express();
 app.use(express.json());
-
-const jPath = path.join(__dirname, "j901/bin/jconsole");
 
 app.post("/eval", (req, res) => {
   const code = req.body.code ?? "";
